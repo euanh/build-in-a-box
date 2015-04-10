@@ -1,0 +1,14 @@
+- hosts: all
+  sudo: yes
+  connection: ssh
+
+  roles:
+    - role: geerlingguy.jenkins
+      jenkins_plugins:
+        - github
+        - ghprb
+        - docker-plugin
+        - copyartifact
+        - matrix-project
+        - parameterized-trigger
+        - timestamper
