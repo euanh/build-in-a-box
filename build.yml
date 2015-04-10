@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: jenkins
   sudo: yes
   connection: ssh
 
@@ -12,3 +12,10 @@
         - matrix-project
         - parameterized-trigger
         - timestamper
+
+- hosts: docker
+  sudo: yes
+  connection: ssh
+
+  roles:
+    - role: mhamrah.docker

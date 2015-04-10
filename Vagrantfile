@@ -10,8 +10,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     xs.xs_password = "xenroot"
   end
 
+  config.vm.define "jenkins"
+  config.vm.define "docker"
+
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "build.yml"
     ansible.raw_ssh_args = "-o ProxyCommand=\"ssh -W %h:%p root@gandalf.uk.xensource.com\""
+    ansible.groups = {
+      "jenkins" => ["jenkins"],
+      "docker" => ["docker"],
+    }
   end
 end

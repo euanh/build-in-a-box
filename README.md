@@ -16,9 +16,9 @@ This repo currently contains only:
   - specifies a single geerlingguy.jenkins role
  
 ## Usage
-This requires an ansible role to be installed from the ansible galaxy:
+This requires some ansible roles to be installed from the ansible galaxy:
 ```
-$ ansible-galaxy install geerlingguy.jenkins
+$ ansible-galaxy install geerlingguy.jenkins mhamrah.docker
 ```
 
 Then you can just use vagrant to start and provision the VM:
